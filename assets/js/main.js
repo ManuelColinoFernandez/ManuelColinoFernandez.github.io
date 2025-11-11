@@ -63,15 +63,15 @@ function renderProjectsGrid(projects) {
 			(p) => `
 			<article class="w-full mb-12">
 				<div class="w-full max-w-[2000px] mx-auto rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all hover:shadow-lg dark:hover:shadow-slate-800/50">
-					<div class="flex flex-col lg:flex-row">
-						${p.image ? `
-						<div class="w-full lg:w-1/2">
-							<div class="aspect-[3/2] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4">
-								<img class="w-full h-full object-contain" src="${encodeURI(p.image)}" alt="${escapeHtml(p.title || 'Project image')}" />
-							</div>
+					<div class="flex flex-col lg:flex-row bg-white dark:bg-slate-900">
+					${p.image ? `
+					<div class="w-full lg:w-1/3 bg-slate-50 dark:bg-slate-800 p-6 flex items-center justify-center">
+						<div class="w-full h-full max-h-[400px] flex items-center">
+							<img class="w-full h-auto max-h-full object-contain" src="${encodeURI(p.image)}" alt="${escapeHtml(p.title || 'Project image')}" />
 						</div>
-						` : ''}
-						<div class="w-full lg:w-1/2 p-8 lg:p-10 bg-white dark:bg-slate-900">
+					</div>
+					` : ''}
+					<div class="w-full lg:w-2/3 p-8 lg:p-10">
 							<div class="flex flex-col h-full">
 								<div class="mb-6">
 									<h2 class="text-2xl font-bold text-slate-800 dark:text-white">${escapeHtml(p.title || '')}</h2>
