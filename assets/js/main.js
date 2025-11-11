@@ -15,7 +15,7 @@
 	// Show resume link if exists
 	const resumeLink = document.getElementById('resumeLink');
 	if (resumeLink) {
-		fetch('/resume/resume.pdf', { method: 'HEAD' }).then((res) => {
+		fetch('/resume/resume.pdf?v=' + Date.now(), { method: 'HEAD', cache: 'no-store' }).then((res) => {
 			if (res.ok) resumeLink.classList.remove('hidden');
 		});
 	}
