@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Projects — Your Name</title>
+		<meta name="description" content="Projects by Your Name." />
+		<link rel="canonical" href="https://taosegundo.github.io/projects.html" />
+		<meta property="og:title" content="Projects — Your Name" />
+		<meta property="og:description" content="Selected projects." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://taosegundo.github.io/projects.html" />
+		<meta name="twitter:card" content="summary" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<script>
+			(function () {
+				const stored = localStorage.getItem('theme');
+				const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				const theme = stored || system;
+				if (theme === 'dark') document.documentElement.classList.add('dark');
+			})();
+		</script>
+	</head>
+	<body class="h-full bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+		<header class="border-b border-slate-200 dark:border-slate-800">
+			<div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+				<a href="/" class="font-semibold">Your Name</a>
+				<nav class="hidden md:flex gap-6 items-center">
+					<a class="nav-link active" href="/projects.html">Projects</a>
+					<a class="nav-link" href="/about.html">About</a>
+					<a class="nav-link" href="/contact.html">Contact</a>
+					<button id="themeToggle" class="rounded-md px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-700">Toggle theme</button>
+				</nav>
+			</div>
+		</header>
+		<main class="mx-auto max-w-5xl px-4 py-12">
+			<h1 class="text-3xl md:text-4xl font-bold tracking-tight">Projects</h1>
+			<p class="mt-4 text-slate-600 dark:text-slate-300">
+				Selected projects. Filter and browse below.
+			</p>
+			<div class="mt-8">
+				<div id="projectFilters" class="flex flex-wrap gap-2"></div>
+				<div id="projectsGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Filled by JS -->
+				</div>
+			</div>
+		</main>
+		<footer class="border-t border-slate-200 dark:border-slate-800">
+			<div class="mx-auto max-w-5xl px-4 py-8 text-sm text-slate-500 dark:text-slate-400">
+				© <span id="year"></span> Your Name. All rights reserved.
+			</div>
+		</footer>
+		<script src="assets/js/main.js"></script>
+	</body>
+	</html>
+
+

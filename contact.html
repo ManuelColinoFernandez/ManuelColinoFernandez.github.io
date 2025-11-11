@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Contact — Your Name</title>
+		<meta name="description" content="Contact Your Name." />
+		<link rel="canonical" href="https://taosegundo.github.io/contact.html" />
+		<meta property="og:title" content="Contact — Your Name" />
+		<meta property="og:description" content="Get in touch." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://taosegundo.github.io/contact.html" />
+		<meta name="twitter:card" content="summary" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<script>
+			(function () {
+				const stored = localStorage.getItem('theme');
+				const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				const theme = stored || system;
+				if (theme === 'dark') document.documentElement.classList.add('dark');
+			})();
+		</script>
+	</head>
+	<body class="h-full bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+		<header class="border-b border-slate-200 dark:border-slate-800">
+			<div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+				<a href="/" class="font-semibold">Your Name</a>
+				<nav class="hidden md:flex gap-6 items-center">
+					<a class="nav-link" href="/projects.html">Projects</a>
+					<a class="nav-link" href="/about.html">About</a>
+					<a class="nav-link active" href="/contact.html">Contact</a>
+					<button id="themeToggle" class="rounded-md px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-700">Toggle theme</button>
+				</nav>
+			</div>
+		</header>
+		<main class="mx-auto max-w-5xl px-4 py-12">
+			<h1 class="text-3xl md:text-4xl font-bold tracking-tight">Contact</h1>
+			<p class="mt-4 text-slate-600 dark:text-slate-300">
+				Best way to reach me is email.
+			</p>
+			<div class="mt-8 grid md:grid-cols-2 gap-8">
+				<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+					<h2 class="font-semibold mb-3">Email</h2>
+					<p>
+						<a class="text-indigo-600 dark:text-indigo-400 hover:underline" href="mailto:you@example.com">you@example.com</a>
+					</p>
+					<div id="resumeLink" class="mt-6 hidden">
+						<a class="btn-secondary" href="/resume/resume.pdf" target="_blank" rel="noopener">View Resume (PDF)</a>
+					</div>
+				</div>
+				<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+					<h2 class="font-semibold mb-3">Contact Form</h2>
+					<form action="https://formspree.io/f/yourFormId" method="POST" class="space-y-4">
+						<input class="input" type="text" name="name" placeholder="Your name" required />
+						<input class="input" type="email" name="email" placeholder="you@example.com" required />
+						<textarea class="input min-h-[120px]" name="message" placeholder="Your message" required></textarea>
+						<button class="btn-primary" type="submit">Send</button>
+						<p class="text-xs text-slate-500 dark:text-slate-400">Replace form action with your Formspree endpoint (optional).</p>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer class="border-t border-slate-200 dark:border-slate-800">
+			<div class="mx-auto max-w-5xl px-4 py-8 text-sm text-slate-500 dark:text-slate-400">
+				© <span id="year"></span> Your Name. All rights reserved.
+			</div>
+		</footer>
+		<script src="assets/js/main.js"></script>
+	</body>
+	</html>
+
+
