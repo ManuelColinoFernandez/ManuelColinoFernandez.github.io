@@ -66,7 +66,9 @@ function renderProjectsGrid(projects) {
 					<div class="flex flex-col lg:flex-row">
 						${p.image ? `
 						<div class="w-full lg:w-1/2">
-							<img class="w-full h-80 lg:h-[500px] object-contain bg-slate-50 dark:bg-slate-800" src="${encodeURI(p.image)}" alt="${escapeHtml(p.title || 'Project image')}" />
+							<div class="aspect-[3/2] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4">
+								<img class="w-full h-full object-contain" src="${encodeURI(p.image)}" alt="${escapeHtml(p.title || 'Project image')}" />
+							</div>
 						</div>
 						` : ''}
 						<div class="w-full lg:w-1/2 p-8 lg:p-10 bg-white dark:bg-slate-900">
