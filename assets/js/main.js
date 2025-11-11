@@ -69,8 +69,8 @@ function renderProjectsGrid(projects) {
 			let mediaHtml = '';
 			if (mediaItems.length > 0) {
 				mediaHtml = `
-				<div class="w-full lg:w-1/3 bg-slate-50 dark:bg-slate-800 relative group">
-					<div class="carousel-container relative w-full h-full min-h-[300px] max-h-[500px] overflow-hidden">
+				<div class="w-full lg:w-1/2 xl:w-2/5 bg-slate-50 dark:bg-slate-800 relative group">
+					<div class="carousel-container relative w-full h-full min-h-[400px] overflow-hidden">
 						${mediaItems.map((item, index) => `
 						<div class="carousel-item absolute inset-0 w-full h-full flex items-center justify-center transition-opacity duration-300 ${index === 0 ? 'opacity-100' : 'opacity-0'}" data-index="${index}">
 							${item.type === 'video' ? `
@@ -106,7 +106,7 @@ function renderProjectsGrid(projects) {
 					</div>
 				` : ''}
 			</div>
-			<div class="p-6 flex flex-col h-full">
+			<div class="p-6 flex flex-col h-full lg:w-1/2 xl:w-3/5">
 				<div class="flex-grow">
 					<h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">${escapeHtml(p.title || '')}</h3>
 					<p class="text-slate-600 dark:text-slate-300 mb-4">${escapeHtml(p.description || '')}</p>
