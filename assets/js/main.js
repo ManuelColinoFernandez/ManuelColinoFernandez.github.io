@@ -92,7 +92,7 @@ function renderFeatured(projects) {
 					`).join('')}
 				</div>
 				<div class="mt-6">
-					<a href="#projects" class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline group">
+					<a href="/projects.html#${p.id || ''}" class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline group">
 						Learn more
 						<svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
