@@ -40,15 +40,22 @@ function renderFeatured(projects) {
 	el.innerHTML = featured
 		.map(
 			(p) => `
-			<li class="p-4 rounded-lg border border-slate-200 dark:border-slate-800">
-				<div class="font-medium">${escapeHtml(p.title || '')}</div>
-				<p class="text-sm text-slate-600 dark:text-slate-300 mt-1">${escapeHtml(p.description || '')}</p>
-				<div class="mt-2 flex gap-2 flex-wrap">
-					${(p.tags || []).map((t) => `<span class="text-xs px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">${escapeHtml(t)}</span>`).join('')}
+			<li class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-md dark:hover:shadow-slate-800/50 transition-shadow">
+				<h3 class="text-lg font-semibold text-slate-900 dark:text-white">${escapeHtml(p.title || '')}</h3>
+				<div class="mt-3 flex flex-wrap gap-2">
+					${(p.tags || []).slice(0, 4).map((t) => `
+						<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200">
+						${escapeHtml(t)}
+					</span>
+					`).join('')}
 				</div>
-				<div class="mt-3 flex gap-3">
-					${p.link ? `<a class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline" href="${encodeURI(p.link)}" target="_blank" rel="noopener">Live</a>` : ''}
-					${p.repo ? `<a class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline" href="${encodeURI(p.repo)}" target="_blank" rel="noopener">Code</a>` : ''}
+				<div class="mt-6">
+					<a href="#projects" class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline group">
+						Learn more
+						<svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</a>
 				</div>
 			</li>`
 		)
